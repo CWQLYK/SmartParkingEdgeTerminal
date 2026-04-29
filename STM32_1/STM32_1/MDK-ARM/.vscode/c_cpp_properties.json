@@ -13,6 +13,8 @@
                 "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Middlewares\\Third_Party\\FreeRTOS\\Source\\CMSIS_RTOS_V2",
                 "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Hardware\\inc",
                 "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Hardware\\src",
+                "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Algorithm\\inc",
+                "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Algorithm\\src",
                 "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\MDK-ARM",
                 "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Core\\Src",
                 "d:\\my\\DanPianJi\\Project\\SmartParkingEdgeTerminal\\STM32_1\\STM32_1\\Drivers\\STM32F1xx_HAL_Driver\\Src",

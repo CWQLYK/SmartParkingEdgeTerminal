@@ -35,6 +35,9 @@
 "stm32_1\port.o"
 "stm32_1\hc_sr04.o"
 "stm32_1\led.o"
+"stm32_1\filter.o"
+"stm32_1\park_state.o"
+"stm32_1\tinyml_infer.o"
 --library_type=microlib --strict --scatter "STM32_1\STM32_1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

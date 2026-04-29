@@ -28,7 +28,7 @@ void HC_SR04_Init(void)
 }
 
 // 获取距离，单位为厘米，返回-1表示测距失败
-double HC_SR04_GetDistance(void)
+float HC_SR04_GetDistance(void)
 {
     uint32_t time_us = 0;
 
@@ -74,7 +74,8 @@ double HC_SR04_GetDistance(void)
     TIM3_Stop();
 
     // 计算距离
-    double distance = (double)(time_us * SPEED_OF_SOUND_CM_PER_US_HALF); // 距离 = 时间 * 声速 / 2
+    float distance = (float)(time_us * SPEED_OF_SOUND_CM_PER_US_HALF); // 距离 = 时间 * 声速 / 2
 
     return distance;
 }
+

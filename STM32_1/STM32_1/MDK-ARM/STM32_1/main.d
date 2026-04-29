@@ -45,3 +45,5 @@ stm32_1\main.o: ../Core/Inc/gpio.h
 stm32_1\main.o: ..\Hardware\inc\led.h
 stm32_1\main.o: ..\Hardware\inc\HC_SR04.h
 stm32_1\main.o: ../Core/Inc/tim3.h
+stm32_1\main.o: ..\Algorithm\inc\filter.h
+stm32_1\main.o: ..\Algorithm\inc\park_state.h

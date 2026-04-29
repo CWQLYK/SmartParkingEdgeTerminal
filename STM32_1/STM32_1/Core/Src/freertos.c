@@ -28,6 +28,8 @@
 #include "led.h"
 #include "usart.h"
 #include "HC_SR04.h"
+#include "filter.h"
+#include "park_state.h"
 // #include "FreeRTOSConfig.h"
 /* USER CODE END Includes */
 
@@ -171,23 +173,31 @@ void StartDefaultTask(void *argument)
 void Task_Sensor(void *argument)
 {
   /* USER CODE BEGIN Task_Sensor */
+
+  ParkData.raw_dist = 0;
+  ParkData.filter_dist = 0;
+
   for (;;)
   {
     /* Sensor task code goes here */
     printf("获取超声波传感器数据...\r\n");
-    double hc_sr04_distance = HC_SR04_GetDistance();
-    if (hc_sr04_distance == HC_SR04_ERROR_TIMEOUT_NOSIGN)
+    ParkData.raw_dist = HC_SR04_GetDistance();
+    if (ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOSIGN)
     {
       printf("超声波传感器无响应，获取数据失败\r\n");
     }
-    else if (hc_sr04_distance == HC_SR04_ERROR_TIMEOUT_NOACK)
+    else if (ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOACK)
     {
       printf("超声波传感器无确认信号，获取数据失败\r\n");
     }
     else
     {
-      printf("超声波传感器数据获取成功: %.2f cm\r\n", hc_sr04_distance);
+      printf("超声波传感器数据获取成功: %.2f cm\r\n", ParkData.raw_dist);
+      printf("正在进行数据滤波...\r\n");
+      ParkData.filter_dist = Filter_GetValue(ParkData.raw_dist);
+      printf("滤波后距离: %.2f cm\r\n", ParkData.filter_dist);
     }
+
     osDelay(100);
   }
   /* USER CODE END Task_Sensor */
@@ -200,7 +210,26 @@ void Task_Park(void *argument)
   {
     /* Park task code goes here */
     printf("开始判断车位状态...\r\n");
-    osDelay(200);
+    // 根据滤波后的距离数据更新车位状态
+    ParkState_Update(ParkData.filter_dist);
+    printf("当前车位状态: %d\r\n", ParkData.park_state);
+    // LED显示车位状态
+    if(ParkData.park_state == PARK_STATE_FREE)
+    {
+      LED0_ON();
+      LED1_OFF(); // 空闲：LED0亮
+    }
+    else if(ParkData.park_state == PARK_STATE_OCCUPIED)
+    {
+      LED0_OFF();
+      LED1_ON(); // 占用：LED1亮
+    }
+    else
+    {
+      LED0_ON();
+      LED1_ON(); // 未知：LED全亮
+    }
+    osDelay(100);
   }
   /* USER CODE END Task_Park */
 }

@@ -44,3 +44,5 @@ stm32_1\freertos.o: ../Core/Inc/usart.h
 stm32_1\freertos.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32_1\freertos.o: ..\Hardware\inc\HC_SR04.h
 stm32_1\freertos.o: ../Core/Inc/tim3.h
+stm32_1\freertos.o: ..\Algorithm\inc\filter.h
+stm32_1\freertos.o: ..\Algorithm\inc\park_state.h

@@ -24,5 +24,5 @@
 #define ECHO_READ() HAL_GPIO_ReadPin(ECHO_PORT, ECHO_PIN)
 
 void HC_SR04_Init(void);
-double HC_SR04_GetDistance(void);
+float HC_SR04_GetDistance(void);
 #endif

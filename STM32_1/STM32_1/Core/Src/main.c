@@ -28,11 +28,13 @@
 #include "HC_SR04.h"
 #include <stdio.h>
 #include "tim3.h"
+#include "filter.h"
+#include "park_state.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+ParkData_TypeDef ParkData;
 
 /* USER CODE END PTD */
 
@@ -98,10 +100,12 @@ int main(void)
   LED_Init();
   HC_SR04_Init();
   TIM3_Init();
+  Filter_Init();
+  ParkState_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();  /* Call init function for freertos objects (in cmsis_os2.c) */
+  osKernelInitialize(); /* Call init function for freertos objects (in cmsis_os2.c) */
   MX_FREERTOS_Init();
 
   /* Start scheduler */

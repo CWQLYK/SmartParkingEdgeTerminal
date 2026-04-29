@@ -36,12 +36,22 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+// 车位数据全局变量
+typedef struct 
+{
+  float raw_dist;    // 原始超声波数据
+  float filter_dist; // 滤波后数据
+  int park_state;   // 车位状态：0-未知，1-空闲，2-占用
+} ParkData_TypeDef;
 
+extern ParkData_TypeDef ParkData;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+#define PARK_STATE_UNKNOWN 0
+#define PARK_STATE_FREE 1
+#define PARK_STATE_OCCUPIED 2
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
