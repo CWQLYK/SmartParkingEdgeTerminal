@@ -31,6 +31,7 @@
 #include "filter.h"
 #include "park_state.h"
 #include "ai_parking.h"
+#include "uart_comm.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,14 +97,16 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_USART1_UART_Init();
   // MX_GPIO_Init();
+  MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   LED_Init();
   HC_SR04_Init();
   TIM3_Init();
   Filter_Init();
   ParkState_Init();
+  UART2_Comm_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */

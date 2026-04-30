@@ -1,5 +1,5 @@
 stm32_1\filter.o: ..\Algorithm\src\filter.c
-stm32_1\filter.o: ..\Algorithm\inc\filter.h
+stm32_1\filter.o: ../Algorithm/inc/filter.h
 stm32_1\filter.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32_1\filter.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32_1\filter.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

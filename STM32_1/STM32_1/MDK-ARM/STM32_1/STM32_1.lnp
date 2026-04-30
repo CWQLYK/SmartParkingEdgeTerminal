@@ -1,5 +1,6 @@
 --cpu Cortex-M3
 "stm32_1\startup_stm32f103xb.o"
+"stm32_1\tim3.o"
 "stm32_1\main.o"
 "stm32_1\gpio.o"
 "stm32_1\freertos.o"
@@ -7,7 +8,6 @@
 "stm32_1\stm32f1xx_it.o"
 "stm32_1\stm32f1xx_hal_msp.o"
 "stm32_1\stm32f1xx_hal_timebase_tim.o"
-"stm32_1\tim3.o"
 "stm32_1\stm32f1xx_hal_gpio_ex.o"
 "stm32_1\stm32f1xx_hal_tim.o"
 "stm32_1\stm32f1xx_hal_tim_ex.o"
@@ -35,6 +35,7 @@
 "stm32_1\port.o"
 "stm32_1\hc_sr04.o"
 "stm32_1\led.o"
+"stm32_1\uart_comm.o"
 "stm32_1\filter.o"
 "stm32_1\park_state.o"
 "stm32_1\tinyml_infer.o"
@@ -43,6 +44,7 @@
 "stm32_1\task_park.o"
 "stm32_1\task_sensor.o"
 "stm32_1\task_uart.o"
+"stm32_1\protocol_master.o"
 --library_type=microlib --strict --scatter "STM32_1\STM32_1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

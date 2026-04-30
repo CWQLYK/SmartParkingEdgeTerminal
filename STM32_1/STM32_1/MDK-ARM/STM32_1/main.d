@@ -42,9 +42,12 @@ stm32_1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_o
 stm32_1\main.o: ../Core/Inc/usart.h
 stm32_1\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32_1\main.o: ../Core/Inc/gpio.h
-stm32_1\main.o: ..\Hardware\inc\led.h
-stm32_1\main.o: ..\Hardware\inc\HC_SR04.h
+stm32_1\main.o: ../Hardware/inc/led.h
+stm32_1\main.o: ../Hardware/inc/HC_SR04.h
 stm32_1\main.o: ../Core/Inc/tim3.h
-stm32_1\main.o: ..\Algorithm\inc\filter.h
-stm32_1\main.o: ..\Algorithm\inc\park_state.h
-stm32_1\main.o: ..\ai\inc\ai_parking.h
+stm32_1\main.o: ../Algorithm/inc/filter.h
+stm32_1\main.o: ../Algorithm/inc/park_state.h
+stm32_1\main.o: ../ai/inc/ai_parking.h
+stm32_1\main.o: ../Hardware/inc/uart_comm.h
+stm32_1\main.o: ..\Protocol\inc\protocol_master.h
+stm32_1\main.o: ../Hardware/inc/uart_comm.h

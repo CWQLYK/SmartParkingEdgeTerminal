@@ -29,3 +29,8 @@ stm32_1\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 stm32_1\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 stm32_1\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 stm32_1\stm32f1xx_it.o: ../Core/Inc/stm32f1xx_it.h
+stm32_1\stm32f1xx_it.o: ../Hardware/inc/uart_comm.h
+stm32_1\stm32f1xx_it.o: ../Core/Inc/usart.h
+stm32_1\stm32f1xx_it.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32_1\stm32f1xx_it.o: ..\Protocol\inc\protocol_master.h
+stm32_1\stm32f1xx_it.o: ../Hardware/inc/uart_comm.h

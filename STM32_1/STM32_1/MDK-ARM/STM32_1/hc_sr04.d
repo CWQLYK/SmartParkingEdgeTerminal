@@ -1,5 +1,5 @@
 stm32_1\hc_sr04.o: ..\Hardware\src\HC_SR04.c
-stm32_1\hc_sr04.o: ..\Hardware\inc\HC_SR04.h
+stm32_1\hc_sr04.o: ../Hardware/inc/HC_SR04.h
 stm32_1\hc_sr04.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32_1\hc_sr04.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32_1\hc_sr04.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

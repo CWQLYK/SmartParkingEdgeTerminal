@@ -1,5 +1,5 @@
 stm32_1\task_park.o: ..\App\src\task_park.c
-stm32_1\task_park.o: ..\App\inc\task_park.h
+stm32_1\task_park.o: ../App/inc/task_park.h
 stm32_1\task_park.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32_1\task_park.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32_1\task_park.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -29,9 +29,9 @@ stm32_1\task_park.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 stm32_1\task_park.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 stm32_1\task_park.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 stm32_1\task_park.o: ../Core/Inc/main.h
-stm32_1\task_park.o: ..\Hardware\inc\led.h
+stm32_1\task_park.o: ../Hardware/inc/led.h
 stm32_1\task_park.o: ../Core/Inc/usart.h
 stm32_1\task_park.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
-stm32_1\task_park.o: ..\Algorithm\inc\park_state.h
-stm32_1\task_park.o: ..\Hardware\inc\HC_SR04.h
+stm32_1\task_park.o: ../Algorithm/inc/park_state.h
+stm32_1\task_park.o: ../Hardware/inc/HC_SR04.h
 stm32_1\task_park.o: ../Core/Inc/tim3.h

@@ -1,5 +1,5 @@
 stm32_1\task_sensor.o: ..\App\src\task_sensor.c
-stm32_1\task_sensor.o: ..\App\inc\task_sensor.h
+stm32_1\task_sensor.o: ../App/inc/task_sensor.h
 stm32_1\task_sensor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32_1\task_sensor.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32_1\task_sensor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -29,9 +29,9 @@ stm32_1\task_sensor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 stm32_1\task_sensor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 stm32_1\task_sensor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 stm32_1\task_sensor.o: ../Core/Inc/main.h
-stm32_1\task_sensor.o: ..\Hardware\inc\HC_SR04.h
+stm32_1\task_sensor.o: ../Hardware/inc/HC_SR04.h
 stm32_1\task_sensor.o: ../Core/Inc/usart.h
 stm32_1\task_sensor.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32_1\task_sensor.o: ../Core/Inc/tim3.h
-stm32_1\task_sensor.o: ..\Algorithm\inc\filter.h
-stm32_1\task_sensor.o: ..\Algorithm\inc\park_state.h
+stm32_1\task_sensor.o: ../Algorithm/inc/filter.h
+stm32_1\task_sensor.o: ../Algorithm/inc/park_state.h

@@ -53,9 +53,12 @@ extern uint8_t Filter_Distances_Index;
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-#define PARK_STATE_UNKNOWN 0
-#define PARK_STATE_FREE 1
-#define PARK_STATE_OCCUPIED 2
+// 车位状态定义
+#define PARK_STATE_UNKNOWN 0 // 未知状态
+#define PARK_STATE_FREE 1 // 空闲状态
+#define PARK_STATE_OCCUPIED 2 // 占用状态
+// 本机从机地址
+#define SLAVE_ADDR 0x01
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

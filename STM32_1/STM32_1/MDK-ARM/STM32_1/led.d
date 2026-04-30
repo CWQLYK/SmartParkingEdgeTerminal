@@ -1,5 +1,5 @@
 stm32_1\led.o: ..\Hardware\src\led.c
-stm32_1\led.o: ..\Hardware\inc\led.h
+stm32_1\led.o: ../Hardware/inc/led.h
 stm32_1\led.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32_1\led.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32_1\led.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

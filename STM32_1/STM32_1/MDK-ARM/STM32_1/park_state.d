@@ -1,5 +1,5 @@
 stm32_1\park_state.o: ..\Algorithm\src\park_state.c
-stm32_1\park_state.o: ..\Algorithm\inc\park_state.h
+stm32_1\park_state.o: ../Algorithm/inc/park_state.h
 stm32_1\park_state.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32_1\park_state.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32_1\park_state.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

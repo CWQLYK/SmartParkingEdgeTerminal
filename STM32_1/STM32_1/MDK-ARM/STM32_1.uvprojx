@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;..\Hardware\inc;..\Hardware\src;..\Algorithm\inc;..\Algorithm\src;..\ai\inc;..\ai\src;..\App\inc;..\App\src</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Hardware/inc;../Hardware/src;../Algorithm/inc;../Algorithm/src;../ai/inc;../ai/src;../App/inc;../App/src;..\Protocol\src;..\Protocol\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -394,6 +394,11 @@
         <Group>
           <GroupName>Application/User/Core</GroupName>
           <Files>
+            <File>
+              <FileName>tim3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\tim3.c</FilePath>
+            </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
@@ -479,11 +484,6 @@
               <FileName>stm32f1xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f1xx_hal_timebase_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>tim3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\tim3.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1219,6 +1219,11 @@
               <FileType>1</FileType>
               <FilePath>..\Hardware\src\led.c</FilePath>
             </File>
+            <File>
+              <FileName>uart_comm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\src\uart_comm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1273,6 +1278,16 @@
               <FileName>task_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\App\src\task_uart.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/protocol</GroupName>
+          <Files>
+            <File>
+              <FileName>protocol_master.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Protocol\src\protocol_master.c</FilePath>
             </File>
           </Files>
         </Group>

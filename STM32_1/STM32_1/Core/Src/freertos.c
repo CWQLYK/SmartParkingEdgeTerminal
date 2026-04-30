@@ -33,6 +33,7 @@
 #include "ai_parking.h"
 #include "task_sensor.h"
 #include "task_park.h"
+#include "task_uart.h"
 // #include "FreeRTOSConfig.h"
 /* USER CODE END Includes */
 
@@ -63,6 +64,8 @@ const osThreadAttr_t defaultTask_attributes = {
     .priority = (osPriority_t)osPriorityNormal,
 };
 
+/* Private function prototypes -----------------------------------------------*/
+/* USER CODE BEGIN FunctionPrototypes */
 osThreadId_t sensorTaskHandle;
 const osThreadAttr_t sensorTask_attributes = {
     .name = "sensorTask",
@@ -90,8 +93,7 @@ const osThreadAttr_t lowPowerTask_attributes = {
     .stack_size = 128 * 4,
     .priority = (osPriority_t)osPriorityBelowNormal5,
 };
-/* Private function prototypes -----------------------------------------------*/
-/* USER CODE BEGIN FunctionPrototypes */
+
 void Task_Sensor(void *argument);
 void Task_Park(void *argument);
 void Task_UART(void *argument);
@@ -196,30 +198,7 @@ void Task_Park(void *argument)
   for (;;)
   {
     /* Park task code goes here */
-
-    // if (ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOSIGN || ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOACK)
-    // {
-    //   continue; // 跳过本次循环，等待下一次有效数据
-    // }
-    // ParkState_Update(ParkData.filter_dist);
-    // printf("当前车位状态: %d\r\n", ParkData.park_state);
-    // // LED显示车位状态
-    // if (ParkData.park_state == PARK_STATE_FREE)
-    // {
-    //   LED0_ON();
-    //   LED1_OFF(); // 空闲：LED0亮
-    // }
-    // else if (ParkData.park_state == PARK_STATE_OCCUPIED)
-    // {
-    //   LED0_OFF();
-    //   LED1_ON(); // 占用：LED1亮
-    // }
-    // else
-    // {
-    //   LED0_ON();
-    //   LED1_ON(); // 未知：LED全亮
-    // }
-
+    printf("检测车位状态...\r\n");
     park_state_task();
     osDelay(100);
   }
@@ -232,7 +211,8 @@ void Task_UART(void *argument)
   for (;;)
   {
     /* UART task code goes here */
-    // printf("开始传输数据给ESP32...\r\n");
+    printf("开始传输数据给ESP32...\r\n");
+    send_parking_data_task(); // 发送当前车位状态
     osDelay(500);
   }
   /* USER CODE END Task_UART */
