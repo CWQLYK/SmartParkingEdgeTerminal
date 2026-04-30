@@ -12,7 +12,7 @@
 #define SPEED_OF_SOUND 343.0                  // 声速，单位为米/秒
 #define SPEED_OF_SOUND_CM_PER_US 0.0343       // 声速，单位为厘米/微秒
 #define SPEED_OF_SOUND_CM_PER_US_HALF 0.01715 // 声速的一半，单位为厘米/微秒
-#define TRIG_PULSE_TIME 10                    // TRIG信号持续时间，单位为微秒
+#define TRIG_PULSE_TIME 15                    // TRIG信号持续时间，单位为微秒
 #define HC_SR04_TIMEOUT 60000                 // 超时时间，单位为微秒
 // ECHO一直未收到信号时，认为测距失败,无响应，返回-1
 #define HC_SR04_ERROR_TIMEOUT_NOSIGN -1.0

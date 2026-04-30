@@ -38,6 +38,11 @@
 "stm32_1\filter.o"
 "stm32_1\park_state.o"
 "stm32_1\tinyml_infer.o"
+"stm32_1\ai_parking.o"
+"stm32_1\task_lowpower.o"
+"stm32_1\task_park.o"
+"stm32_1\task_sensor.o"
+"stm32_1\task_uart.o"
 --library_type=microlib --strict --scatter "STM32_1\STM32_1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

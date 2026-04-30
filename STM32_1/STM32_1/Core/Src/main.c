@@ -30,12 +30,14 @@
 #include "tim3.h"
 #include "filter.h"
 #include "park_state.h"
+#include "ai_parking.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 ParkData_TypeDef ParkData;
-
+float Filter_Distances[10] = {0}; // 环形缓冲区，存储最近10次滤波后的距离数据
+uint8_t Filter_Distances_Index = 0; // 环形缓冲区索引，指向最新的滤波数据位置
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/

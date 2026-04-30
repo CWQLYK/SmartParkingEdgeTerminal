@@ -46,7 +46,7 @@ float HC_SR04_GetDistance(void)
     while (ECHO_READ() == GPIO_PIN_RESET)
     {
         timeout_counter++;
-        if (timeout_counter > 1e7) // 超过一定次数仍未收到echo信号，认为测距失败
+        if (timeout_counter > 1e5) // 超过一定次数仍未收到echo信号，认为测距失败
         {
             // 超时处理
             TIM3_Stop();
@@ -61,7 +61,7 @@ float HC_SR04_GetDistance(void)
     while (ECHO_READ() == GPIO_PIN_SET)
     {
         timeout_counter++;
-        if (timeout_counter > 1e5) // 超过一定次数仍未收到echo信号，认为测距失败
+        if (timeout_counter > 1e7) // 超过一定次数仍未收到echo信号，认为测距失败
         {
             // 超时处理
             TIM3_Stop();

@@ -30,6 +30,9 @@
 #include "HC_SR04.h"
 #include "filter.h"
 #include "park_state.h"
+#include "ai_parking.h"
+#include "task_sensor.h"
+#include "task_park.h"
 // #include "FreeRTOSConfig.h"
 /* USER CODE END Includes */
 
@@ -180,23 +183,7 @@ void Task_Sensor(void *argument)
   for (;;)
   {
     /* Sensor task code goes here */
-    printf("获取超声波传感器数据...\r\n");
-    ParkData.raw_dist = HC_SR04_GetDistance();
-    if (ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOSIGN)
-    {
-      printf("超声波传感器无响应，获取数据失败\r\n");
-    }
-    else if (ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOACK)
-    {
-      printf("超声波传感器无确认信号，获取数据失败\r\n");
-    }
-    else
-    {
-      printf("超声波传感器数据获取成功: %.2f cm\r\n", ParkData.raw_dist);
-      printf("正在进行数据滤波...\r\n");
-      ParkData.filter_dist = Filter_GetValue(ParkData.raw_dist);
-      printf("滤波后距离: %.2f cm\r\n", ParkData.filter_dist);
-    }
+    get_sensor_data_task();
 
     osDelay(100);
   }
@@ -209,26 +196,31 @@ void Task_Park(void *argument)
   for (;;)
   {
     /* Park task code goes here */
-    printf("开始判断车位状态...\r\n");
-    // 根据滤波后的距离数据更新车位状态
-    ParkState_Update(ParkData.filter_dist);
-    printf("当前车位状态: %d\r\n", ParkData.park_state);
-    // LED显示车位状态
-    if(ParkData.park_state == PARK_STATE_FREE)
-    {
-      LED0_ON();
-      LED1_OFF(); // 空闲：LED0亮
-    }
-    else if(ParkData.park_state == PARK_STATE_OCCUPIED)
-    {
-      LED0_OFF();
-      LED1_ON(); // 占用：LED1亮
-    }
-    else
-    {
-      LED0_ON();
-      LED1_ON(); // 未知：LED全亮
-    }
+
+    // if (ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOSIGN || ParkData.raw_dist == HC_SR04_ERROR_TIMEOUT_NOACK)
+    // {
+    //   continue; // 跳过本次循环，等待下一次有效数据
+    // }
+    // ParkState_Update(ParkData.filter_dist);
+    // printf("当前车位状态: %d\r\n", ParkData.park_state);
+    // // LED显示车位状态
+    // if (ParkData.park_state == PARK_STATE_FREE)
+    // {
+    //   LED0_ON();
+    //   LED1_OFF(); // 空闲：LED0亮
+    // }
+    // else if (ParkData.park_state == PARK_STATE_OCCUPIED)
+    // {
+    //   LED0_OFF();
+    //   LED1_ON(); // 占用：LED1亮
+    // }
+    // else
+    // {
+    //   LED0_ON();
+    //   LED1_ON(); // 未知：LED全亮
+    // }
+
+    park_state_task();
     osDelay(100);
   }
   /* USER CODE END Task_Park */
@@ -240,7 +232,7 @@ void Task_UART(void *argument)
   for (;;)
   {
     /* UART task code goes here */
-    printf("开始传输数据给ESP32...\r\n");
+    // printf("开始传输数据给ESP32...\r\n");
     osDelay(500);
   }
   /* USER CODE END Task_UART */
@@ -252,7 +244,7 @@ void Task_LowPower(void *argument)
   for (;;)
   {
     /* Low power task code goes here */
-    printf("低功耗模式，开始检测车位状态...\r\n");
+    // printf("低功耗模式，开始检测车位状态...\r\n");
     osDelay(1000);
   }
   /* USER CODE END Task_LowPower */

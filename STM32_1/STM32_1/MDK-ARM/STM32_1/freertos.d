@@ -46,3 +46,6 @@ stm32_1\freertos.o: ..\Hardware\inc\HC_SR04.h
 stm32_1\freertos.o: ../Core/Inc/tim3.h
 stm32_1\freertos.o: ..\Algorithm\inc\filter.h
 stm32_1\freertos.o: ..\Algorithm\inc\park_state.h
+stm32_1\freertos.o: ..\ai\inc\ai_parking.h
+stm32_1\freertos.o: ..\App\inc\task_sensor.h
+stm32_1\freertos.o: ..\App\inc\task_park.h

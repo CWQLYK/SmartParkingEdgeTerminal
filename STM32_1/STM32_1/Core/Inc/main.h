@@ -45,6 +45,10 @@ typedef struct
 } ParkData_TypeDef;
 
 extern ParkData_TypeDef ParkData;
+// 最近10次滤波后的距离数据，用于AI输入
+extern float Filter_Distances[10];
+// 环形缓冲区索引，指向最新的滤波数据位置
+extern uint8_t Filter_Distances_Index;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

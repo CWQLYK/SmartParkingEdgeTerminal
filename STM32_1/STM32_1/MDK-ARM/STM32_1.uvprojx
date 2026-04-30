@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;..\Hardware\inc;..\Hardware\src;..\Algorithm\inc;..\Algorithm\src</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;..\Hardware\inc;..\Hardware\src;..\Algorithm\inc;..\Algorithm\src;..\ai\inc;..\ai\src;..\App\inc;..\App\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1238,6 +1238,41 @@
               <FileName>tinyml_infer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Algorithm\src\tinyml_infer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/ai</GroupName>
+          <Files>
+            <File>
+              <FileName>ai_parking.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ai\src\ai_parking.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/app</GroupName>
+          <Files>
+            <File>
+              <FileName>task_lowpower.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\src\task_lowpower.c</FilePath>
+            </File>
+            <File>
+              <FileName>task_park.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\src\task_park.c</FilePath>
+            </File>
+            <File>
+              <FileName>task_sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\src\task_sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>task_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\src\task_uart.c</FilePath>
             </File>
           </Files>
         </Group>
