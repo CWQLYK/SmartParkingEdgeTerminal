@@ -185,8 +185,9 @@ void Task_Sensor(void *argument)
   for (;;)
   {
     /* Sensor task code goes here */
+    // 获取传感器数据
     get_sensor_data_task();
-
+    printf("获取传感器数据: 原始距离=%.2f cm, 滤波后距离=%.2f cm\r\n", ParkData.raw_dist, ParkData.filter_dist);
     osDelay(100);
   }
   /* USER CODE END Task_Sensor */

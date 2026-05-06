@@ -47,6 +47,7 @@ stm32_1\freertos.o: ../Core/Inc/tim3.h
 stm32_1\freertos.o: ../Algorithm/inc/filter.h
 stm32_1\freertos.o: ../Algorithm/inc/park_state.h
 stm32_1\freertos.o: ../ai/inc/ai_parking.h
+stm32_1\freertos.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 stm32_1\freertos.o: ../App/inc/task_sensor.h
 stm32_1\freertos.o: ../App/inc/task_park.h
 stm32_1\freertos.o: ../App/inc/task_uart.h

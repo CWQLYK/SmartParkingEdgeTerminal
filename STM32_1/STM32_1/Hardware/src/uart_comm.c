@@ -64,5 +64,6 @@ void UART2_SendData_Master(uint8_t slave_addr, uint8_t state)
     {
         // 发送数据帧
         UART2_SendData(frame_buf, frame_len);
+        printf("发送数据帧: 从机地址=0x%02X, 车位状态=%d\r\n", slave_addr, state);
     }
 }
